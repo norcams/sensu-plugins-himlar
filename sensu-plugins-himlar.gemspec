@@ -1,6 +1,7 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
+require 'date'
 require_relative 'lib/sensu-plugins-himlar'
 
 Gem::Specification.new do |s|
@@ -21,6 +22,8 @@ Gem::Specification.new do |s|
 
   #s.add_dependency('json',       '< 2.0.0')
   #s.add_dependency('mixlib-cli', '>= 1.5.0')
+  s.add_runtime_dependency 'english',      '0.6.3'
+  s.add_runtime_dependency 'sensu-plugin', '~> 1.2'
 
   s.add_development_dependency('rake')
   s.add_development_dependency('minitest')
