@@ -13,12 +13,12 @@ class ForemanOutOfSync < Sensu::Plugin::Check::CLI
   option :user,
          short: '-u USER',
          long: '--user USER',
-         default: 'admin'
+         required: true
 
   option :password,
          short: '-p PASSWORD',
          long: '--password PASSWORD',
-         default: 'changeme'
+         required: true
 
   option :verify_ssl,
          short: '-v',
@@ -65,10 +65,10 @@ class ForemanOutOfSync < Sensu::Plugin::Check::CLI
                     config[:password],
                     config[:endpoint],
                     config[:verify_ssl])
-    if count > config[:warning]
-      warning "#{count} hosts are out of sync"
-    elsif count > config[:critical]
+    if count > config[:critical]
       critical "#{count} hosts are out of sync"
+    elsif count > config[:warning]
+      warning "#{count} hosts are out of sync"
     else
       ok 'We are within the threshold'
     end
