@@ -20,11 +20,6 @@ class ForemanErrors < Sensu::Plugin::Check::CLI
          long: '--password PASSWORD',
          default: 'changeme'
 
-  option :password,
-         short: '-p PASSWORD',
-         long: '--password PASSWORD',
-         default: 'changeme'
-
   option :verify_ssl,
          short: '-v',
          long: '--verify-ssl',
