@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'english', '0.6.3'
   s.add_runtime_dependency 'rest-client'
-  s.add_runtime_dependency 'sensu-plugin', '~> 1.2'
+  s.add_runtime_dependency 'sensu-plugin', '4.0.0'
 
   s.add_development_dependency('minitest')
   s.add_development_dependency('rake')
