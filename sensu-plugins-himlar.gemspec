@@ -20,11 +20,10 @@ Gem::Specification.new do |s|
   s.executables   = Dir.glob('bin/**/*.rb').map { |file| File.basename(file) }
   s.test_files    = Dir['test/*.rb']
 
-  #s.add_dependency('json',       '< 2.0.0')
-  #s.add_dependency('mixlib-cli', '>= 1.5.0')
-  s.add_runtime_dependency 'english',      '0.6.3'
-  s.add_runtime_dependency 'sensu-plugin', '~> 1.2'
+  s.add_runtime_dependency 'english', '0.6.3'
+  s.add_runtime_dependency 'rest-client'
+  s.add_runtime_dependency 'sensu-plugin', '4.0.0'
 
-  s.add_development_dependency('rake')
   s.add_development_dependency('minitest')
+  s.add_development_dependency('rake')
 end
