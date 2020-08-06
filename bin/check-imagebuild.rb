@@ -31,11 +31,11 @@ class CheckImagebuild < Sensu::Plugin::Check::CLI
       result = 'invalid'
     end
     if result.include? "failed"
-      critical "#{distro_build} failed!"
+      critical "#{distro} failed!"
     elsif result.include? "success"
-      ok "#{distro_build} success!"
+      ok "#{distro} success!"
     elsif result.include? "invalid"
-      warning "#{distro_build} warning!"
+      warning "#{distro} warning!"
     end
   end
 end
